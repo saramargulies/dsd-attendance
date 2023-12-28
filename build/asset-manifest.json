@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3cd441e1.css",
+    "main.js": "/static/js/main.b804dec0.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/DSDLogo.svg": "/static/media/DSDLogo.a4720d053a9f92399689f2f55e0fcf56.svg",
+    "index.html": "/index.html",
+    "main.3cd441e1.css.map": "/static/css/main.3cd441e1.css.map",
+    "main.b804dec0.js.map": "/static/js/main.b804dec0.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3cd441e1.css",
+    "static/js/main.b804dec0.js"
+  ]
+}

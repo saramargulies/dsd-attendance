@@ -1,0 +1,91 @@
+.font-link {
+  font-family: 'Montserrat', serif;
+  font-size: 15px;
+}
+
+.table th:first-child,
+.table td:first-child {
+  position: sticky;
+  left: -17px;
+  background-color: rgb(117, 192, 209);
+}
+
+.card h5, h6 {
+  position:sticky;
+  left: 0;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+.link {
+  color: #083c46;
+}
+
+.special-day {
+  background-color: #55b0c6;
+}
+
+#spinner{
+  color: #55b0c6;
+}
+
+.text-info {
+  color: #55b0c6;
+}
+
+.btn {
+  background-color: #55afc6cb;
+  border: none;
+  margin: 1px;
+}
+
+.btn:disabled {
+  background-color: #52747dcb;
+  border: none;
+  margin: 1px;
+}
+
+.btn:hover {
+  background-color: #083c46;
+}
+
+#delete {
+  background-color: #dc3545;
+}
+
+.dropdown-item:focus{
+  background-color: #55b0c6;
+}
+
+.btn-outline-success {
+  color: white;
+}
+
+footer {
+  color: black;
+}
+
+a {
+  color: #083c46
+}
+
+#year-filter {
+  width: 5.5em;
+}
+thead {
+  font-weight: bold;
+}
+
+#note {
+  width: 50%;
+}
+
+.nav-logo{
+  width: 8rem;
+}
