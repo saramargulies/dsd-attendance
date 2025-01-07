@@ -40,7 +40,7 @@ function CreateOuting() {
   };
 
   const fetchData = async () => {
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/groups/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/groups/`;
 
     const response = await fetch(url);
 
@@ -63,7 +63,7 @@ function CreateOuting() {
       return g.label;
     });
 
-    const submitUrl = `${process.env.REACT_APP_FASTAPI}/attendance/outings/`;
+    const submitUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/outings/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

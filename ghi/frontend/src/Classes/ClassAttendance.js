@@ -43,7 +43,7 @@ function ClassAttendance() {
   };
 
   const fetchRecentClasses = async () => {
-    const classesUrl = `${process.env.REACT_APP_FASTAPI}/attendance/classes/`;
+    const classesUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/classes/`;
 
     const classesResponse = await fetch(classesUrl, {
       credentials: "include",
@@ -60,7 +60,7 @@ function ClassAttendance() {
 
   const fetchFormOptions = async () => {
     setFormLoading(true)
-    const responses = await Promise.all([fetch(`${process.env.REACT_APP_FASTAPI}/attendance/dogs/`), fetch(`${process.env.REACT_APP_FASTAPI}/attendance/weekly/`)])
+    const responses = await Promise.all([fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`), fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/weekly/`)])
 
     const data = await Promise.all(
       responses.map((response) => response.json())
@@ -91,7 +91,7 @@ function ClassAttendance() {
     data.weekly_class = weekly;
     console.log(data)
 
-    const classesUrl = `${process.env.REACT_APP_FASTAPI}/attendance/classes/`;
+    const classesUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/classes/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

@@ -18,7 +18,7 @@ export const AuthProvider = ({children}) => {
 export const checkAuthenticated = async () => {
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_FASTAPI}/accounts/authenticated/`,
+      `${process.env.REACT_APP_DJANGO_API}/accounts/authenticated/`,
       { credentials: "include" }
     );
 
@@ -54,7 +54,7 @@ export const logout = async () => {
   };
 
   try {
-    const res = await fetch(`${process.env.REACT_APP_FASTAPI}/accounts/logout/`, config);
+    const res = await fetch(`${process.env.REACT_APP_DJANGO_API}/accounts/logout/`, config);
 
     const data = await res.json();
   } catch (err) {

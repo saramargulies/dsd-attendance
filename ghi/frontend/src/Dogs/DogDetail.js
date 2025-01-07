@@ -13,7 +13,7 @@ function DogDetail() {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/${id}/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/${id}/`;
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();

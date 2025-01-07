@@ -14,8 +14,8 @@ function MainPage() {
 
   const fetchData = async () => {
     const responses = await Promise.all([
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/notes/`),
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/classes/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/notes/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/classes/`),
     ]);
 
     const data = await Promise.all(
@@ -40,7 +40,7 @@ function MainPage() {
 
     data.note = note;
 
-    const notesUrl = `${process.env.REACT_APP_FASTAPI}/attendance/notes/`;
+    const notesUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/notes/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",
@@ -61,7 +61,7 @@ function MainPage() {
 
 
   const dismissNote = (id) => {
-    fetch(`${process.env.REACT_APP_FASTAPI}/attendance/notes/${id}/`, {
+    fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/notes/${id}/`, {
       method: "PUT",
       credentials: "include",
       headers: {

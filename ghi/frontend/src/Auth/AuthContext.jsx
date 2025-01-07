@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const loginUser = async (loginData) => {
-    const loginUrl = `${process.env.REACT_APP_FASTAPI}/accounts/login/`;
+    const loginUrl = `${process.env.REACT_APP_DJANGO_API}/accounts/login/`;
     const fetchConfig = {
       method: "post",
       body: JSON.stringify(loginData),
@@ -30,6 +30,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await fetch(loginUrl, fetchConfig);
       const data = await res.json();
+      console.log(data)
       if (data.success) {
         setUser(data);
       }
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_FASTAPI}/accounts/logout/`, config);
+      const res = await fetch(`${process.env.REACT_APP_DJANGO_API}/accounts/logout/`, config);
 
       await res.json();
       setUser(null);
@@ -67,7 +68,7 @@ export const AuthProvider = ({ children }) => {
   const checkUserStatus = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_FASTAPI}/accounts/authenticated/`,
+        `${process.env.REACT_APP_DJANGO_API}/accounts/authenticated/`,
         { credentials: "include" }
       );
 

@@ -41,9 +41,9 @@ function AddDog() {
   };
 
   const fetchData = async () => {
-    const weeklyUrl = `${process.env.REACT_APP_FASTAPI}/attendance/weekly/`;
-    const clientUrl = `${process.env.REACT_APP_FASTAPI}/attendance/clients/`;
-    const groupsUrl = `${process.env.REACT_APP_FASTAPI}/attendance/groups/`;
+    const weeklyUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/weekly/`;
+    const clientUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/clients/`;
+    const groupsUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/groups/`;
 
     const weeklyResponse = await fetch(weeklyUrl);
     const clientResponse = await fetch(clientUrl);
@@ -72,7 +72,7 @@ function AddDog() {
     data.group = group;
     data.w_class = weekly;
 
-    const clientUrl = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/`;
+    const clientUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

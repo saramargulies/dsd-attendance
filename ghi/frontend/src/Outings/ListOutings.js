@@ -22,7 +22,7 @@ function ListOutings() {
   };
 
   const fetchData = async () => {
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/outings/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/outings/`;
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();

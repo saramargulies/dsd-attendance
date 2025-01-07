@@ -8,7 +8,7 @@ function AddCalendar() {
   const [myEventsList, setMyEventsList] = useState([]);
 
   const componentDidUpdate = async () => {
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/calendar/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/calendar/`;
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();

@@ -39,10 +39,10 @@ function UpdateDog() {
   };
 
   const fetchData = async () => {
-    const dogUrl = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/${id}/`;
-    const weeklyUrl = `${process.env.REACT_APP_FASTAPI}/attendance/weekly/`;
-    const clientUrl = `${process.env.REACT_APP_FASTAPI}/attendance/clients/`;
-    const groupsUrl = `${process.env.REACT_APP_FASTAPI}/attendance/groups/`;
+    const dogUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/${id}/`;
+    const weeklyUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/weekly/`;
+    const clientUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/clients/`;
+    const groupsUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/groups/`;
 
     const dogResponse = await fetch(dogUrl);
     const weeklyResponse = await fetch(weeklyUrl);
@@ -82,7 +82,7 @@ function UpdateDog() {
     data.group = group;
     data.w_class = weekly;
 
-    const dogUrl = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/${id}/`;
+    const dogUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/${id}/`;
     const fetchConfig = {
       credentials: "include",
       method: "put",

@@ -34,6 +34,7 @@ urlpatterns = [
     path("outings/<int:id>/", show_outing, name="show_outing"),
     path("outings/<int:id>/take_attendance", take_attendance, name="take_attendance"),
     # path("classes/", ClassListViewSet.as_view({'get': 'list'}), name="list_classes"),
+    path("classes/", list_classes, name="list_classes"),
     path("weekly/", list_weeklies, name="list_weeklies"),
     path("groups/", list_groups, name="list_groups"),
     path("clients/", list_clients, name="list_clients"),

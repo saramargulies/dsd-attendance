@@ -54,8 +54,8 @@ function OutingDetail() {
 
   const fetchData = async () => {
     const responses = await Promise.all([
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/outings/${id}/`),
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/groups/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/outings/${id}/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/groups/`),
     ]);
 
     const data = await Promise.all(
@@ -89,7 +89,7 @@ function OutingDetail() {
       return g.label;
     });
 
-    const submitUrl = `${process.env.REACT_APP_FASTAPI}/attendance/outings/${id}/`;
+    const submitUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/outings/${id}/`;
     const fetchConfig = {
       credentials: "include",
       method: "put",
@@ -132,7 +132,7 @@ function OutingDetail() {
   ////// I want to write a function that will connect to a button to "ARCHIVE a dog and take them off the overview or filter overview by year with tabs to navigate between years"
 
   function deleteOuting(id) {
-    fetch(`${process.env.REACT_APP_FASTAPI}/attendance/outings/${id}/`, {
+    fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/outings/${id}/`, {
       method: "DELETE",
       credentials: "include",
       headers: {

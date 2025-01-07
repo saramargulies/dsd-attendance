@@ -20,7 +20,7 @@ function AddClient() {
 
     data.name = name;
 
-    const clientUrl = `${process.env.REACT_APP_FASTAPI}/attendance/clients/`;
+    const clientUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/clients/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

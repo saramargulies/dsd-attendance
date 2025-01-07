@@ -37,9 +37,9 @@ function PrivateAttendance() {
   };
 
   const fetchData = async () => {
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/`;
-    const weeklyUrl = `${process.env.REACT_APP_FASTAPI}/attendance/weekly/`;
-    const classesUrl = `${process.env.REACT_APP_FASTAPI}/attendance/classes/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`;
+    const weeklyUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/weekly/`;
+    const classesUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/classes/`;
 
     const response = await fetch(url);
     const weeklyResponse = await fetch(weeklyUrl);
@@ -69,7 +69,7 @@ function PrivateAttendance() {
       data.class_attendance = [];
     }
 
-    const classesUrl = `${process.env.REACT_APP_FASTAPI}/attendance/classes/`;
+    const classesUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/classes/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

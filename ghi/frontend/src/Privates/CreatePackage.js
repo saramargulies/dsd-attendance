@@ -24,8 +24,8 @@ function CreatePackage() {
 
   const fetchData = async () => {
     const responses = await Promise.all([
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/dogs/`),
-      fetch(`${process.env.REACT_APP_FASTAPI}/attendance/packages/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`),
+      fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/packages/`),
     ]);
 
     const data = await Promise.all(
@@ -46,7 +46,7 @@ function CreatePackage() {
     data.dog = dog;
     data.sessions = sessions;
 
-    const submitUrl = `${process.env.REACT_APP_FASTAPI}/attendance/packages/`;
+    const submitUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/packages/`;
     const fetchConfig = {
       credentials: "include",
       method: "post",

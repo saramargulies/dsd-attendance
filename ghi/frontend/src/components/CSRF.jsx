@@ -21,7 +21,7 @@ const CSRFToken = () => {
     useEffect(() => {
         const fetchData = async () =>{
             try {
-                await fetch(`${process.env.REACT_APP_FASTAPI}/accounts/csrf_cookie`)
+                await fetch(`${process.env.REACT_APP_DJANGO_API}/accounts/csrf_cookie`)
 
             } catch (err) {
 

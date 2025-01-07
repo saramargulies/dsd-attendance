@@ -30,8 +30,8 @@ function OutingAttendance() {
   }
 
   const fetchData = async () => {
-    const outingUrl = `${process.env.REACT_APP_FASTAPI}/attendance/outings/`;
-    const dogsUrl = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/`;
+    const outingUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/outings/`;
+    const dogsUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`;
 
     const outingResponse = await fetch(outingUrl);
     const dogsResponse = await fetch(dogsUrl);
@@ -62,7 +62,7 @@ function OutingAttendance() {
       data.outing_attendance = [];
     }
 
-    const submitUrl = `${process.env.REACT_APP_FASTAPI}/attendance/outings/${outing}/take_attendance`;
+    const submitUrl = `${process.env.REACT_APP_DJANGO_API}/attendance/outings/${outing}/take_attendance`;
 
     const fetchConfig = {
       credentials: "include",

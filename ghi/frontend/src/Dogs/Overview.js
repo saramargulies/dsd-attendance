@@ -16,7 +16,7 @@ function Overview() {
 
   const fetchData = async () => {
     setLoading(true);
-    const url = `${process.env.REACT_APP_FASTAPI}/attendance/dogs/`;
+    const url = `${process.env.REACT_APP_DJANGO_API}/attendance/dogs/`;
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();
@@ -35,7 +35,7 @@ function Overview() {
     data.w_class = dog.w_class;
     data.archived = !dog.archived;
 
-    fetch(`${process.env.REACT_APP_FASTAPI}/attendance/dogs/${dog.id}/`, {
+    fetch(`${process.env.REACT_APP_DJANGO_API}/attendance/dogs/${dog.id}/`, {
       method: "PUT",
       body: JSON.stringify(data),
       credentials: "include",
