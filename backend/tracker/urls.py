@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
 from .views import (
     ClassListViewSet,
@@ -18,13 +18,13 @@ from .views import (
     list_privates,
 )
 
-class_list = ClassListViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
+# class_list = ClassListViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create'
+# })
 
 router = routers.DefaultRouter()
-# router.register(r'classes', class_list)
+router.register("", ClassListViewSet, basename="classes")
 
 urlpatterns = [
     path("dogs/", api_list_dogs, name="api_list_dogs"),
@@ -33,8 +33,9 @@ urlpatterns = [
     path("outings/", list_outings, name="list_outings"),
     path("outings/<int:id>/", show_outing, name="show_outing"),
     path("outings/<int:id>/take_attendance", take_attendance, name="take_attendance"),
+    path("classes/", include(router.urls)),
     # path("classes/", ClassListViewSet.as_view({'get': 'list'}), name="list_classes"),
-    path("classes/", list_classes, name="list_classes"),
+    # path("classes/", list_classes, name="list_classes"),
     path("weekly/", list_weeklies, name="list_weeklies"),
     path("groups/", list_groups, name="list_groups"),
     path("clients/", list_clients, name="list_clients"),

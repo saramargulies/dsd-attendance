@@ -1,5 +1,7 @@
 from django.http import JsonResponse
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, status
+from rest_framework.request import Request
+from rest_framework.response import Response
 from .encoders import (
     GroupListEncoder,
     ClientListEncoder,
@@ -240,11 +242,12 @@ def list_clients(request):
         return JsonResponse(client, encoder=ClientListEncoder, safe=False)
 
 
-# @require_http_methods(["GET"])
-class ClassListViewSet(viewsets.ModelViewSet):
-    queryset = ClassInstance.objects.all()
-    serializer_class = ClassListSerializer
-    permission_classes = [permissions.IsAuthenticated]
+class ClassListViewSet(viewsets.ViewSet):
+    def list(self, request:Request):
+        queryset = ClassInstance.objects.all()
+        serializer = ClassListSerializer(instance=queryset, many=True)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
 
 @require_http_methods(["GET", "POST"])
 def list_classes(request):

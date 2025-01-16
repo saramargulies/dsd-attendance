@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.views.generic import TemplateView
 
 def redirect_to_home(request):
-    return redirect("home")
+    return redirect("admin/")
 
 urlpatterns = [
     path("admin/", admin.site.urls),

@@ -54,7 +54,6 @@ class DogSerializer(serializers.ModelSerializer):
 class ClassListSerializer(serializers.ModelSerializer):
 
     class Meta:
-        # order_by = ['-id']
         model = ClassInstance
         depth = 1
         fields = '__all__'
